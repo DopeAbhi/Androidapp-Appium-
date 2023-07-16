@@ -37,7 +37,8 @@ public class Mainapp extends Base {
                     "direction", "down",
                     "percent",  10.0
             ));
-            Thread.sleep(3000);
+            Thread.sleep(2000);
+
 
 
         driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Electric Grill']/android.widget.Button[1]")).click();

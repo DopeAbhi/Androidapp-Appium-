@@ -184,7 +184,7 @@ public class Signupandlogin extends Base {
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='1']")).sendKeys("Test@123");
         driver.findElement(AppiumBy.xpath("//android.widget.Button[@content-desc='LOGIN']")).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         String usernotexist=driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Could not find a user with that email.']")).getAttribute("content-desc");
         Assert.assertEquals("Could not find a user with that email.",usernotexist);
         System.out.println("Error message when user didn't exist="+usernotexist);
