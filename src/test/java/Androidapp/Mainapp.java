@@ -5,20 +5,28 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class Mainapp extends Base {
     @Test
     public void Test() throws InterruptedException {
-        //Login
+//      WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.id("text1")));
+//        //Login
+
+
+
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='0']")).click();
-        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='0']")).clear();
         Thread.sleep(1000);
-        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='0']")).sendKeys("max3@gmail.com");
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='0']")).sendKeys("max4@gmail.com");
         Thread.sleep(1000);
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='1']")).click();
-        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='1']")).clear();
         Thread.sleep(1000);
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='1']")).sendKeys("Test@123");
         driver.hideKeyboard();
