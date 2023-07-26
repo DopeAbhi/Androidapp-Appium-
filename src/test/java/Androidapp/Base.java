@@ -1,10 +1,12 @@
 package Androidapp;
 
+import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
+import net.bytebuddy.build.ToStringPlugin;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -26,6 +28,8 @@ public class Base {
 //Appium 2.0.0-rc.5
 //node   v18.15.0
 //Java   20
+//Start server through cmd with plugin - appium -use-plugins=element-wait
+
         AppiumServiceBuilder builder=new AppiumServiceBuilder();
         builder.withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
                 .usingDriverExecutable(new File("/usr/local/bin/node"))
@@ -39,7 +43,7 @@ public class Base {
         service.start();
 
         System.out.println(service.getUrl());
-        System.out.println(service.isRunning());
+
 
 
 
@@ -54,6 +58,8 @@ public class Base {
         driver=new AndroidDriver(new URL("http://127.0.0.1:4723/"),options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().timeouts().getImplicitWaitTimeout();
+       driver.executeScript("plugin: setWaitPluginProperties", ImmutableMap.of("timeout", 3000 , "intervalBetweenAttempts", 11 ));
+
 
 
     }
@@ -62,6 +68,7 @@ public class Base {
     {
         driver.quit();
         service.stop();
+        System.out.println(service.isRunning());
     }
 
 
