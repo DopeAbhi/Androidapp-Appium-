@@ -17,6 +17,8 @@ import java.time.Duration;
 
 public class Base {
 
+
+
    public UiAutomator2Options options;
     public AppiumDriverLocalService service;
     public AndroidDriver driver;
@@ -28,7 +30,9 @@ public class Base {
 //Appium 2.0.0-rc.5
 //node   v18.15.0
 //Java   20
-//Start server through cmd with plugin - appium -use-plugins=element-wait
+//Start server through cmd with plugin - "appium --use-plugins=element-wait"
+
+        //Reminder add apk in when done
 
         AppiumServiceBuilder builder=new AppiumServiceBuilder();
         builder.withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
@@ -39,8 +43,8 @@ public class Base {
                 .withIPAddress("127.0.0.1");
         // .withArgument(GeneralServerFlag.BASEPATH,"wd/hub");  don't need to include current version doesn't support
         service=   AppiumDriverLocalService.buildService(builder);
-        service.stop();
-        service.start();
+//        service.stop();
+//        service.start();
 
         System.out.println(service.getUrl());
 
@@ -58,7 +62,7 @@ public class Base {
         driver=new AndroidDriver(new URL("http://127.0.0.1:4723/"),options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().timeouts().getImplicitWaitTimeout();
-       driver.executeScript("plugin: setWaitPluginProperties", ImmutableMap.of("timeout", 3000 , "intervalBetweenAttempts", 11 ));
+      //  driver.executeScript("plugin: setWaitPluginProperties", ImmutableMap.of("timeout", 1111 , "intervalBetweenAttempts", 11 ));
 
 
 

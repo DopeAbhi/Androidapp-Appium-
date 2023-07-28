@@ -39,11 +39,11 @@ public class Mainapp extends Base {
 
         //Adding products in favourite and verifying in favourites
 
-        driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Red Shirt']/android.widget.Button[1]")).click();
+        driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Trousers']/android.widget.Button[1]")).click();
 
-        driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Red Shirt']/android.widget.ImageView")).click();
+        driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Trousers']/android.widget.ImageView")).click();
 
-        selecteditem[0]= driver.findElement(AppiumBy.xpath("//android.widget.ImageView[@content-desc='Red Shirt']")).getAttribute("content-desc");
+        selecteditem[0]= driver.findElement(AppiumBy.xpath("//android.widget.ImageView[@content-desc='Trousers']")).getAttribute("content-desc");
 
         driver.pressKey(new KeyEvent(AndroidKey.BACK));
 
