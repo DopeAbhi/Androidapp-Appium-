@@ -7,8 +7,7 @@ import org.testng.annotations.Test;
 
 public class productorder extends Base{
     @Test
-    public void verification()
-    {
+    public void verification() throws InterruptedException {
         //Login Process
 
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='0']")).click();
@@ -28,11 +27,14 @@ public class productorder extends Base{
                 "direction", "down",
                 "percent",  10.0
         ));
-        driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Handheld Milk Frother']/android.widget.Button[2]")).click();
+        Thread.sleep(2000);
+        //driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Handheld Milk Frother']/android.widget.Button[2]")).click();
 
 
-        driver.findElement(AppiumBy.xpath("android.widget.Button[@index='4']")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@index='4']")).click();
 
+
+       driver.findElement(AppiumBy.xpath("//android.widget.Button[@content-desc='ORDER NOW']")).click();
 
 
     }

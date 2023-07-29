@@ -83,6 +83,29 @@ public class productedit extends Base
         System.out.println("Price "+valprice);
         driver.pressKey(new KeyEvent(AndroidKey.BACK));
 
+        //Adding new product
+
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@content-desc='Open navigation menu']")).click();
+        driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Manage Products']")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@index='2']")).click();
+
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='0']")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='0']")).sendKeys("Ather");
+
+          driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='1']")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='1']")).sendKeys("999");
+
+          driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='2']")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='2']")).sendKeys("Very Good Scooter");
+
+  driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='3']")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.EditText[@index='3']")).sendKeys("https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Ather-450X-170120221250.png");
+
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@index='3']")).click();
+
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@content-desc='Open navigation menu']")).click();
+        driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Shop']")).click();
+
 
 
     }

@@ -62,7 +62,7 @@ public class Base {
         driver=new AndroidDriver(new URL("http://127.0.0.1:4723/"),options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().timeouts().getImplicitWaitTimeout();
-      //  driver.executeScript("plugin: setWaitPluginProperties", ImmutableMap.of("timeout", 1111 , "intervalBetweenAttempts", 11 ));
+    //    driver.executeScript("plugin: setWaitPluginProperties", ImmutableMap.of("timeout", 1111 , "intervalBetweenAttempts", 11 ));
 
 
 
